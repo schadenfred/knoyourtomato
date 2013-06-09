@@ -1,0 +1,19 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: knowyourcoconut_development
+  pool: 5
+  timeout: 5000
+  username: fred
+  password: tastywave
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: knowyourcoconut_test
+  pool: 5
+  timeout: 5000
+  username: fred
+  password: tastywave
+
