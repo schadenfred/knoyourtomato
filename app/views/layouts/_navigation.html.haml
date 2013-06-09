@@ -1,4 +1,4 @@
-= link_to "Know Your Coconut", root_path, :class => 'brand'
+= link_to "KnowYourCoconut", root_path, :class => 'brand'
 %ul.nav
   - if user_signed_in?
     %li
@@ -9,7 +9,7 @@
   - if user_signed_in?
     %li
       = link_to('Edit account', edit_user_registration_path)
-    - if current_user.has_role? :admin
+    - if current_user.has_role? :superadmin
       %li
         = link_to('Admin', users_path)
   - else
