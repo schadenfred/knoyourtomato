@@ -1,0 +1,2 @@
+class CertificationsController < ApplicationController
+end

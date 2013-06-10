@@ -1,0 +1,2 @@
+class CohabitantsController < ApplicationController
+end

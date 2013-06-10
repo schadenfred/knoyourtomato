@@ -1,5 +1,8 @@
 = link_to "KnowYourCoconut", root_path, :class => 'brand'
-%ul.nav
+%ul.nav.pull-right
+  %li= link_to "Farms", farms_path
+  %li= link_to "Communities", communities_path
+  %li= link_to "Cohabitants", cohabitants_path
   - if user_signed_in?
     %li
       = link_to('Logout', destroy_user_session_path, :method=>'delete')

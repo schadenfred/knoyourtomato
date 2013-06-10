@@ -11,7 +11,64 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130609014940) do
+ActiveRecord::Schema.define(:version => 20130610013345) do
+
+  create_table "certifications", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "url"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "cohabitants", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "url"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "communities", :force => true do |t|
+    t.string   "languages"
+    t.string   "religions"
+    t.text     "description"
+    t.string   "cuisine"
+    t.string   "practices"
+    t.string   "population"
+    t.string   "nearest_town"
+    t.string   "name"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "farm_certifications", :force => true do |t|
+    t.integer  "farm_id"
+    t.integer  "certification_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "farms", :force => true do |t|
+    t.integer  "coconut_type"
+    t.integer  "community_id"
+    t.date     "planted_on"
+    t.string   "area"
+    t.string   "soil_type"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "positions", :force => true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "farm_id"
+    t.date     "tenured_since"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"

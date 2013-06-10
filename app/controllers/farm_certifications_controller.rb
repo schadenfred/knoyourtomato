@@ -1,0 +1,2 @@
+class FarmCertificationsController < ApplicationController
+end

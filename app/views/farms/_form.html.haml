@@ -1,0 +1,14 @@
+= simple_form_for(@farm) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :coconut_type
+    = f.input :community_id
+    = f.input :planted_on
+    = f.input :area
+    = f.input :soil_type
+    = f.input :name
+    = f.input :description
+
+  .form-actions
+    = f.button :submit

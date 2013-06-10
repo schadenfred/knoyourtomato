@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Languages:
+  = @community.languages
+%p
+  %b Religions:
+  = @community.religions
+%p
+  %b Description:
+  = @community.description
+%p
+  %b Cuisine:
+  = @community.cuisine
+%p
+  %b Practices:
+  = @community.practices
+%p
+  %b Population:
+  = @community.population
+%p
+  %b Nearest town:
+  = @community.nearest_town
+%p
+  %b Name:
+  = @community.name
+
+= link_to 'Edit', edit_community_path(@community)
+\|
+= link_to 'Back', communities_path

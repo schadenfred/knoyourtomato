@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Coconut type:
+  = @farm.coconut_type
+%p
+  %b Community:
+  = @farm.community_id
+%p
+  %b Planted on:
+  = @farm.planted_on
+%p
+  %b Area:
+  = @farm.area
+%p
+  %b Soil type:
+  = @farm.soil_type
+%p
+  %b Name:
+  = @farm.name
+%p
+  %b Description:
+  = @farm.description
+
+= link_to 'Edit', edit_farm_path(@farm)
+\|
+= link_to 'Back', farms_path
