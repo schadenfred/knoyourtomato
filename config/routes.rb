@@ -26,4 +26,6 @@ Knowyourcoconut::Application.routes.draw do
     resources :positions
   end
 
+  resources :farmers, only: [:index, :show]
+
 end
