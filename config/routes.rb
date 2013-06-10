@@ -1,6 +1,5 @@
 Knowyourcoconut::Application.routes.draw do
 
-  resources :positions
   resources :cohabitants
   resources :farm_certifications
   resources :certifications
@@ -15,10 +14,16 @@ Knowyourcoconut::Application.routes.draw do
   
   root :to => "home#index"
   
-  devise_for :users
+  devise_for :users 
+
+  devise_scope :user do 
+    match '/login', to: 'devise/sessions#new'
+    match '/signup', to: 'devise/registrations#new'
+  end
 
   resources :users do
     resources :farms
+    resources :positions
   end
 
 end

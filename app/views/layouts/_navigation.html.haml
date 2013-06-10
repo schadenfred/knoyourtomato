@@ -1,20 +1,15 @@
-= link_to "KnowYourCoconut", root_path, :class => 'brand'
-%ul.nav.pull-right
-  %li= link_to "Farms", farms_path
-  %li= link_to "Communities", communities_path
-  %li= link_to "Cohabitants", cohabitants_path
-  - if user_signed_in?
-    %li
-      = link_to('Logout', destroy_user_session_path, :method=>'delete')
-  - else
-    %li
-      = link_to('Login', new_user_session_path)
-  - if user_signed_in?
-    %li
-      = link_to('Edit account', edit_user_registration_path)
-    - if current_user.has_role? :superadmin
-      %li
-        = link_to('Admin', users_path)
-  - else
-    %li
-      = link_to('Sign up', new_user_registration_path)
+.row.span12
+  = image_tag("BANNER_trans4.png")
+.row
+  .span12
+    %h1.text-center KnowYourCoconut
+    %ul.inline.text-center
+      %li= link_to "Farms", farms_path
+      %li= link_to "Communities", communities_path
+      %li= link_to "Cohabitants", cohabitants_path
+      - if user_signed_in?
+        %li= link_to('Edit account', edit_user_registration_path)
+        - if current_user.has_role? :superadmin
+          %li
+            = link_to('Admin', users_path)
+        %li= link_to('Logout', destroy_user_session_path, :method=>'delete')

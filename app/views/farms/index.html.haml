@@ -2,26 +2,13 @@
 
 %table
   %tr
-    %th Coconut type
-    %th Community
-    %th Planted on
-    %th Area
-    %th Soil type
     %th Name
-    %th Description
-    %th
-    %th
-    %th
+    %th Community
 
   - @farms.each do |farm|
     %tr
-      %td= farm.coconut_type
-      %td= farm.community_id
-      %td= farm.planted_on
-      %td= farm.area
-      %td= farm.soil_type
       %td= farm.name
-      %td= farm.description
+      %td= farm.community_id
       %td= link_to 'Show', farm
       %td= link_to 'Edit', edit_farm_path(farm)
       %td= link_to 'Destroy', farm, method: :delete, data: { confirm: 'Are you sure?' }

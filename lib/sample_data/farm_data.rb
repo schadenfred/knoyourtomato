@@ -1,11 +1,13 @@
-module WineData
+module FarmData
 
   def boonville_producers
     [
-      "Ferrari-Carano",
-      "Kendall Jackson",  
-      "Duckhorn",
-      "Lede Wines"
+      "Patara",
+      "Chengnamo",  
+      "Chayya",
+      "Anpornprisit",
+      "ObOb",
+      "Thanutai"
 
     ]
   end
