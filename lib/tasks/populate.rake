@@ -63,10 +63,14 @@ end
 
 def make_farms
 
-  farm_names.each do |farm|
-    Winery.create(
-      name: winery_name, 
-      producer_id: rand(1..20)
+  farm_names.each do |farm_name|
+    Farm.create(
+      name: farm_name, 
+      community_id: rand(1..3),
+      planted_on: rand(1955..1995),
+      area: rand(20..500),
+      soil_type: "high organic",
+      description: farm_descriptions.sample
     )
   end
 end
