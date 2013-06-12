@@ -8,16 +8,12 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
     = yield(:head)
-  %body
-    %header.navbar
-      %nav 
-        .container
-          = render 'layouts/navigation'
-    #main{:role => "main"}
-      .container
-        .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
-          %footer
+  %body{:class => "#{controller_name} #{action_name}"}
+    .container
+      = render 'navigation'
+      = render 'messages'
+    .container
+      = yield 
+    / = render 'footer'
+
+    / = debug(params) if Rails.env.development?

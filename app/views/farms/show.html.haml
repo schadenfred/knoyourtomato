@@ -1,41 +1,34 @@
-#farmCarousel.carousel.slide{:style => "width: 400px; margin: 0 auto; height: 200px;"}
-  %ol.carousel-indicators
-    %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
-    %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
-    %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
-  / Carousel items
-  .carousel-inner
-    .active.item
-      = image_tag("image-1.jpg")
-    .item
-      = image_tag("image-2.jpg")
-  %a.carousel-control.left{"data-slide" => "prev", :href => "#farmCarousel"} ‹
-  %a.carousel-control.right{"data-slide" => "next", :href => "#farmCarousel"} ›
+.row
+  .span12
+    .span5
+      = render 'farm_carousel'
+      / .row
+      / %iframe{:allowfullscreen => "", :frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/iiuP3ylemaw?feature=player_embedded", :width => "400"}
+    .span5
 
-%p#notice= notice
 
-%p
-  %b Coconut type:
-  = @farm.fruit
-%p
-  %b Community:
-  = @farm.community_id
-%p
-  %b Planted on:
-  = @farm.planted_on
-%p
-  %b Area:
-  = @farm.area
-%p
-  %b Soil type:
-  = @farm.soil_type
-%p
-  %b Name:
-  = @farm.name
-%p
-  %b Description:
-  = @farm.description
+      %p
+        %b Coconut type:
+        = @farm.fruit
+      %p
+        %b Community:
+        = @farm.community_id
+      %p
+        %b Planted on:
+        = @farm.planted_on
+      %p
+        %b Area:
+        = @farm.area
+      %p
+        %b Soil type:
+        = @farm.soil_type
+      %p
+        %b Name:
+        = @farm.name
+      %p
+        %b Description:
+        = @farm.description
 
-= link_to 'Edit', edit_farm_path(@farm)
-\|
-= link_to 'Back', farms_path
+      = link_to 'Edit', edit_farm_path(@farm)
+      \|
+      = link_to 'Back', farms_path

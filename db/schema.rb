@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20130610013345) do
     t.string   "population"
     t.string   "nearest_town"
     t.string   "name"
+    t.string   "wikipedia"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

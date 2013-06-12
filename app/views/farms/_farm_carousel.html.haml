@@ -1,0 +1,14 @@
+#farmCarousel.carousel.slide{:style => "width: 250px; padding-top: 0px; padding-bottom: 130px; margin: 0 auto; height: 200px;"}
+  %ol.carousel-indicators
+    %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+  / Carousel items
+  .carousel-inner
+    .active.item
+      = image_tag("Agroforestry_1.jpg")
+    .item
+      = image_tag("Harvesting_1.jpg")
+    %a.carousel-control.left{"data-slide" => "prev", :href => "#farmCarousel"} ‹
+    %a.carousel-control.right{"data-slide" => "next", :href => "#farmCarousel"} ›
+  
