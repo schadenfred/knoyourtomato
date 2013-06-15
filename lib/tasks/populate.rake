@@ -66,7 +66,7 @@ def make_farms
   farm_names.each do |farm_name|
     Farm.create(
       name: farm_name, 
-      community_id: rand(1..3),
+      community_id: "1",
       planted_on: rand(1955..1995),
       area: rand(20..500),
       soil_type: "high organic",
@@ -74,3 +74,25 @@ def make_farms
     )
   end
 end
+
+def make_communities
+  Community.create!(
+    languages: "Phu Thai, Phuan, Shan",
+    religions: "Buddhism, Islam, Christianity",
+    description: "The city is located at the junction of the Chao Phraya, 
+      Lopburi and Pa Sak rivers, and on the main north-south railway linking
+      Chiang Mai to Bangkok. The old city is on an island formed by a bend of
+      the Chao Phraya on the west and south sides, the Pa Sak on the east side 
+      and the Klong Muang canal on the northern side. It is estimated that 
+      Ayutthaya by the year 1600 CE had a population of about 300,000, with 
+      the population perhaps reaching 1,000,000 around 1700 CE, making it one 
+      of the world's largest cities at that time.[3] In 1767, the city was 
+      destroyed by the Burmese army, resulting in the collapse of the 
+      kingdom.",
+    nearest_town: "Ayutthay",
+    name: "Phetchabun Mountains"
+  )
+end
+
+
+

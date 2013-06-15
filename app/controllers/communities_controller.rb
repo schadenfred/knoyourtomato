@@ -11,6 +11,7 @@ class CommunitiesController < ApplicationController
 
   def show
     @community = Community.find(params[:id])
+    @farms = @community.farms
 
     respond_to do |format|
       format.html # show.html.erb

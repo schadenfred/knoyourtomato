@@ -15,9 +15,9 @@
         = @farm.fruit
       %p
         %b Community:
-        = @farm.community.name
+        = link_to @farm.community.name, community_path(@farm.community.id)
       %p
-        %b Planted on:
+        %b Planted:
         = @farm.planted_on
       %p
         %b Area:
