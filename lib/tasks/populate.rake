@@ -36,7 +36,7 @@ namespace :db do
     puts "#{green("==>")} Making farms"
     make_farms    
     puts "#{green("==>")} Making communities"
-    # make_wines
+    make_communities
     puts "#{green("==>")} Making cohabitants"
     # make_reviews
     puts "#{green("==>")} Making certifications"
