@@ -1,15 +1,15 @@
 = simple_form_for(@community) do |f|
   = f.error_notification
-
-  .form-inputs
+  .span5
+    = f.input :name
+    = f.input :nearest_town
+    = f.input :population
     = f.input :languages
     = f.input :religions
-    = f.input :description
     = f.input :cuisine
     = f.input :practices
-    = f.input :population
-    = f.input :nearest_town
-    = f.input :name
+  .span5
+    = f.input :description
 
-  .form-actions
+  .row
     = f.button :submit

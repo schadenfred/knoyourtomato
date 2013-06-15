@@ -10,7 +10,7 @@
 .navbar.navbar-fixed-bottom.hidden-phone
   .navbar-inner
     .container
-      .span6.offset3
-        %ul.nav
-          = nav_link_to "home", root_url
-          = render "boilerplate_links"
+      %ul.nav 
+        = nav_link_to "home", root_url
+        = render "boilerplate_links"
+        = render "nav_links"

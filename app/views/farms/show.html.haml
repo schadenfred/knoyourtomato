@@ -1,6 +1,9 @@
 .row
   .span12
     .span5
+      .text-center
+        %h5 This coconut water comes from
+        %h1= @farm.name
       = render 'farm_carousel'
       / .row
       / %iframe{:allowfullscreen => "", :frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/iiuP3ylemaw?feature=player_embedded", :width => "400"}
@@ -12,7 +15,7 @@
         = @farm.fruit
       %p
         %b Community:
-        = @farm.community_id
+        = @farm.community.name
       %p
         %b Planted on:
         = @farm.planted_on
