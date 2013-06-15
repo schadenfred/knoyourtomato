@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610013345) do
+ActiveRecord::Schema.define(:version => 20130615215020) do
 
   create_table "certifications", :force => true do |t|
     t.string   "name"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20130610013345) do
     t.string   "population"
     t.string   "nearest_town"
     t.string   "name"
-    t.string   "wikipedia"
+    t.string   "url"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(:version => 20130610013345) do
     t.text     "description"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "name"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "positions", :force => true do |t|
@@ -84,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20130610013345) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
+    t.string   "name",                   :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -95,10 +104,10 @@ ActiveRecord::Schema.define(:version => 20130610013345) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["name"], :name => "index_users_on_name", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "users_roles", :id => false, :force => true do |t|

@@ -1,7 +1,10 @@
 .row
   .span12
+    .visible-desktop.text-center
+      %h1= @farm.name
+      %br    
     .span5
-      .text-center
+      .visible-phone.text-center
         %h5 This coconut water comes from
         %h1= @farm.name
       = render 'farm_carousel'

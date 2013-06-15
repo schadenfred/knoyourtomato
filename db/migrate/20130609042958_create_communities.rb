@@ -9,7 +9,7 @@ class CreateCommunities < ActiveRecord::Migration
       t.string :population
       t.string :nearest_town
       t.string :name
-      t.string :wikipedia
+      t.string :url
 
       t.timestamps
     end
