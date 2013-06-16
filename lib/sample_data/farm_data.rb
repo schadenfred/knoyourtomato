@@ -2,12 +2,11 @@ module FarmData
 
   def farm_names
     [
-      "Patara",
-      "Chengnamo",  
-      "Chayya",
-      "Anpornprisit",
-      "Thanutai"
-
+      "Patara farm",
+      "Chengnamo plantation",  
+      "Chayya farm",
+      "Anpornprisit reserve",
+      "Thanutai farm"
     ]
   end
 

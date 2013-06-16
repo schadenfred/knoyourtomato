@@ -1,4 +1,4 @@
-.row
+.row-fluid
   .span12
     .visible-desktop.text-center
       %h1= @farm.name
@@ -11,30 +11,30 @@
       / .row
       / %iframe{:allowfullscreen => "", :frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/iiuP3ylemaw?feature=player_embedded", :width => "400"}
     .span5
-
-
-      %p
-        %b Coconut type:
-        = @farm.fruit
-      %p
-        %b Community:
-        = link_to @farm.community.name, community_path(@farm.community.id)
-      %p
-        %b Planted:
-        = @farm.planted_on
-      %p
-        %b Area:
-        = @farm.area
-      %p
-        %b Soil type:
-        = @farm.soil_type
-      %p
-        %b Name:
-        = @farm.name
-      %p
-        %b Description:
-        = @farm.description
-
-      = link_to 'Edit', edit_farm_path(@farm)
-      \|
+      %dl
+        %dt Farm description:
+        %dd= @farm.description
+      .row-fluid
+        .span3
+          %dl
+            %dt Fruit:
+            %dd= @farm.fruit
+        .span3
+          %dl
+            %dt Community:
+            %dd= link_to @farm.community.name, community_path(@farm.community.id)
+        .span3
+          %dl
+            %dt Planted:
+            %dd= @farm.planted_on
+        .span3
+          %dl
+            %dt Area:
+            %dd= @farm.area
+      %dl
+        %dt Soil type:
+        %dd= @farm.soil_type
+      - if can? :edit, Farm
+        = link_to 'Edit', edit_farm_path(@farm)
+        |
       = link_to 'Back', farms_path

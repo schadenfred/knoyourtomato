@@ -8,11 +8,9 @@ gem 'jquery-rails'
 gem "thin", ">= 1.5.0"
 gem "haml"
 gem "bootstrap-sass"
-gem "sendgrid", ">= 1.0.1"
 
 # authentication
 gem "devise", ">= 2.1.2"
-gem 'devise_invitable', '~> 1.1.0'
 gem "cancan"
 gem "rolify"
 gem "simple_form", ">= 2.0.4"
@@ -57,7 +55,6 @@ group :test, :development do
  
   gem 'factory_girl_rails' 
   gem 'rspec-rails'
-  gem "jasminerice" #, :git => 'https://github.com/bradphelan/jasminerice.git' 
   gem 'shoulda-matchers'
   gem 'rspec-given'
   gem 'rb-inotify'

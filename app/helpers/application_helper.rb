@@ -20,4 +20,9 @@ module ApplicationHelper
     end
   end
 
+  def admin(edit_path)
+    if current_user 
+      somethign
+    end
+  end
 end
