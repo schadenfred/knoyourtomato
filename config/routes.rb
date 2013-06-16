@@ -1,15 +1,14 @@
 Knowyourcoconut::Application.routes.draw do
 
   resources :images
-
-
   resources :cohabitants
   resources :farm_certifications
   resources :certifications
+  resources :farms
+
   resources :communities do 
     resources :farms
   end
-  resources :farms
 
   authenticated :user do
     root :to => 'home#index'
@@ -22,6 +21,7 @@ Knowyourcoconut::Application.routes.draw do
   devise_scope :user do 
     match '/login', to: 'devise/sessions#new'
     match '/signup', to: 'devise/registrations#new'
+    resource :profile, only: [:show, :update]
   end
 
   resources :users do

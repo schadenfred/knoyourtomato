@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :image do
-    image "MyString"
+    name "MyString"
     imageable_type "MyString"
     imageable_id 1
   end
