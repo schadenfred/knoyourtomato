@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130617004758) do
+ActiveRecord::Schema.define(:version => 20130617060655) do
 
   create_table "certifications", :force => true do |t|
     t.string   "name"
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(:version => 20130617004758) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "farm_certifications", :force => true do |t|
+    t.integer  "farm_id"
+    t.integer  "certification_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "farms", :force => true do |t|
     t.string   "fruit"
     t.integer  "community_id"
@@ -75,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20130617004758) do
     t.string   "imageable_type"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.string   "image"
   end
 
   create_table "positions", :force => true do |t|
