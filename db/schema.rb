@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130615215020) do
+ActiveRecord::Schema.define(:version => 20130617004758) do
 
   create_table "certifications", :force => true do |t|
     t.string   "name"
@@ -21,12 +21,26 @@ ActiveRecord::Schema.define(:version => 20130615215020) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "certifications_farms", :force => true do |t|
+    t.integer  "certification_id"
+    t.integer  "farm_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "cohabitants", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.string   "url"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "cohabitants_farms", :force => true do |t|
+    t.integer  "cohabitant_id"
+    t.integer  "farm_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "communities", :force => true do |t|
@@ -41,13 +55,6 @@ ActiveRecord::Schema.define(:version => 20130615215020) do
     t.string   "url"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-  end
-
-  create_table "farm_certifications", :force => true do |t|
-    t.integer  "farm_id"
-    t.integer  "certification_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
   end
 
   create_table "farms", :force => true do |t|
@@ -73,11 +80,16 @@ ActiveRecord::Schema.define(:version => 20130615215020) do
   create_table "positions", :force => true do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.integer  "farm_id"
     t.date     "tenured_since"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "positionable_id"
+    t.string   "positionable_type"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
+
+  add_index "positions", ["positionable_type", "positionable_id"], :name => "index_positions_on_positionable_type_and_positionable_id"
+  add_index "positions", ["title"], :name => "index_positions_on_title"
+  add_index "positions", ["user_id"], :name => "index_positions_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
