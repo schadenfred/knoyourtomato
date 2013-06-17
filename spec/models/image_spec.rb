@@ -4,7 +4,7 @@ describe Image do
 
 	describe "database" do 
 
-		%w[name imageable_type].each do |column|
+		%w[name imageable_type image].each do |column|
 
 			it { should have_db_column(column.to_sym).of_type(:string) }
 		end

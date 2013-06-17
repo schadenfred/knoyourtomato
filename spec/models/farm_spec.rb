@@ -22,9 +22,10 @@ describe Farm do
 		it { should belong_to(:community) }
 		it { should have_many(:cohabitants) }
 		it { should have_many(:cohabitants).through(:cohabitants_farms) }
+		it { should have_many(:certifications) }
 		it { should have_many(:certifications_farms) }
 		it { should have_many(:positions) }
+		it { should have_many(:users).through(:positions) }
 		it { should have_many(:images) }
-
 	end
 end
