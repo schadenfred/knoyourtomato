@@ -4,6 +4,7 @@ require 'faker'
 Dir[Rails.root.join("lib/sample_data/*.rb")].each {|f| require f}
 
 include FarmData
+include ThaiNames
  
 def colorize(text, color_code)
  "\e[#{color_code}m#{text}\e[0m"
@@ -23,8 +24,8 @@ namespace :db do
       puts "#{red("==>")} Clearing Current Data"
       Rake::Task['db:reset'].invoke
     end
-    # puts "#{green("==>")} Making sample users"
-    # make_users
+    puts "#{green("==>")} Making sample users"
+    make_users
     # puts "#{green("==>")} Making user roles"
     # make_user_roles
     # puts "#{green("==>")} Making admin user"
@@ -50,8 +51,10 @@ end
 
 def make_users
 
-  99.times do |n|
-    name = Faker::Name.name 
+  20.times do |n|
+    first = (male_first_names + female_first_names).sample
+    last = thai_last_names.sample
+    name = first + " " + last
     email = Faker::Internet.email
     password  = "password"
     user = User.new(name: name,
