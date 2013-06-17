@@ -11,7 +11,7 @@
     = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
     .container
-      = render 'navigation'
+      = render 'nav_bar_top'
       = render 'messages'
     .container
       = yield 

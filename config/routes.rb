@@ -2,7 +2,6 @@ Knowyourcoconut::Application.routes.draw do
 
   resources :images
   resources :cohabitants
-  resources :farm_certifications
   resources :certifications
   resources :farms
 

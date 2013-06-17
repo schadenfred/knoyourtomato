@@ -1,8 +1,9 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :farm_certification do
-    farm_id 1
-    certification_id 1
+  factory :certifications_farm do
+
+  	certification_id 1
+  	farm_id 1
   end
 end

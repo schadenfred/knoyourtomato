@@ -11,4 +11,9 @@ describe Image do
 
 		it { should have_db_column(:imageable_id).of_type(:integer) } 
 	end
+
+	describe "associations" do 
+
+		it { should belong_to(:imageable) }
+	end
 end

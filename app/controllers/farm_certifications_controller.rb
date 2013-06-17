@@ -1,2 +1,0 @@
-class FarmCertificationsController < ApplicationController
-end

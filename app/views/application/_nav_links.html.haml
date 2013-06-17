@@ -3,7 +3,7 @@
 %li= link_to "cohabitants", cohabitants_path
 %li= link_to "farmers", farmers_path
 - if user_signed_in?
-  %li= link_to('dit account', edit_user_registration_path)
+  %li= link_to('edit account', edit_user_registration_path)
   - if current_user.has_role? :superadmin
     %li
       = link_to('admin', users_path)
